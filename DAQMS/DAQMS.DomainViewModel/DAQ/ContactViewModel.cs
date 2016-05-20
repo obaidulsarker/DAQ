@@ -17,6 +17,8 @@ namespace DAQMS.DomainViewModel
             this.ContactTypeList = new List<SelectListItem>(); 
         }
 
+
+
         [Display(Name = "Company Name")]
         [DataMember, DataColumn(true)]
         public string CompanyName { get; set; }

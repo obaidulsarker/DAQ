@@ -11,5 +11,6 @@ namespace DAQMS.DomainViewModel
     public class CompanyViewModel : Company
     {
 
+
     }
 }
