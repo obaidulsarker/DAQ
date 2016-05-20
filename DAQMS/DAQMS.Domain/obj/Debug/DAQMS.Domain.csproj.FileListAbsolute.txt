@@ -45,3 +45,15 @@ C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Domain\bin\Debug\Ent
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.csprojResolveAssemblyReference.cache
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.dll
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.pdb
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\DAQMS.Domain.dll.config
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\DAQMS.Domain.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\DAQMS.Domain.pdb
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\AutoMapper.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\EntityFramework.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\AutoMapper.xml
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\EntityFramework.xml
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.csprojResolveAssemblyReference.cache
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Domain\obj\Debug\DAQMS.Domain.pdb

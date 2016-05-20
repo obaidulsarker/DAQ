@@ -23,6 +23,10 @@ namespace DAQMS.DomainViewModel
 
         [Display(Name = "Project Name")]
         [DataMember, DataColumn(true)]
+        public int ProjectId { get; set; }
+
+        [Display(Name = "Project Name")]
+        [DataMember, DataColumn(true)]
         public string ProjectName { get; set; }
 
         [Display(Name = "Contact Type")]

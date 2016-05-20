@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DAQMS.Core
 {
@@ -65,6 +66,48 @@ namespace DAQMS.Core
             }
 
         }
+
+        public static string GetModelStateErrorMessage(ModelStateDictionary modelStateDictionary)
+        {
+            string message = @"<div id='ErrorMessage'>";
+
+            foreach (var modelStateValues in modelStateDictionary.Values)
+            {
+                if (modelStateValues.Errors.Any())
+                {
+                    foreach (var modelError in modelStateValues.Errors)
+                    {
+                        message += @"<p>";
+                        message += modelError.ErrorMessage;
+                        message += "</p>";
+                    }
+                }
+            }
+
+            message += "</div>";
+
+            return message;
+        }
+
+        //Populate Dropdownlist
+        public static List<SelectListItem> PopulateDropdownList<T>(this List<T> objectList, string valueField, string textField)
+        {
+            try
+            {
+                var selectedList = new SelectList(objectList, valueField, textField);
+                List<SelectListItem> items;
+                IEnumerable<SelectListItem> listOfItems;
+                listOfItems = from obj in selectedList select new SelectListItem { Selected = false, Text = obj.Text, Value = obj.Value };
+                items = listOfItems.ToList();
+
+                return items.OrderBy(s => s.Text).OrderByDescending(x => x.Text).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
     }
 }

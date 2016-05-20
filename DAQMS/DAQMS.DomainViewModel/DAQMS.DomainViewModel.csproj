@@ -62,6 +62,7 @@
     <Compile Include="DAQ\ProjectViewModel.cs" />
     <Compile Include="UM\RoleMenuViewModel.cs" />
     <Compile Include="UM\RoleViewModel.cs" />
+    <Compile Include="UM\UserRightViewModel.cs" />
     <Compile Include="UM\UserRoleViewModel.cs" />
     <Compile Include="UM\UserViewModel.cs" />
   </ItemGroup>

@@ -54,6 +54,7 @@
     <Compile Include="DAQ\CompanyDAL.cs" />
     <Compile Include="DAQ\ContactDAL.cs" />
     <Compile Include="DAQ\DeviceDAL.cs" />
+    <Compile Include="DAQ\ProjectDAL.cs" />
     <Compile Include="DBHelper\AppSettings.cs" />
     <Compile Include="DBHelper\CustomParameter.cs" />
     <Compile Include="DBHelper\CustomParameterList.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="UM\RoleDAL.cs" />
     <Compile Include="UM\RoleMenuDAL.cs" />
     <Compile Include="UM\UserDAL.cs" />
+    <Compile Include="UM\UserRightDAL.cs" />
     <Compile Include="UM\UserRoleDAL.cs" />
   </ItemGroup>
   <ItemGroup>

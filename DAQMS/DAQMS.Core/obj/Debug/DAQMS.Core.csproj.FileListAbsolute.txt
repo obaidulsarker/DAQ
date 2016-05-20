@@ -31,3 +31,14 @@ C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Core\obj\Debug\DAQMS
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.csproj.GenerateResource.Cache
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.dll
 C:\Users\raselbappi\Documents\GitHub\DAQMS_Apps\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.pdb
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\DAQMS.Core.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\DAQMS.Core.pdb
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\DAQMS.Domain.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\AutoMapper.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\DAQMS.Domain.pdb
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\bin\Debug\AutoMapper.xml
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.csprojResolveAssemblyReference.cache
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.Resource.resources
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.csproj.GenerateResource.Cache
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.dll
+D:\UpWork\DAQ\Code\DAQ\DAQMS\DAQMS.Core\obj\Debug\DAQMS.Core.pdb

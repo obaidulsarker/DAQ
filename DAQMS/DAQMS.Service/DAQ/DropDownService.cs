@@ -11,11 +11,11 @@ using DAQMS.DomainViewModel;
 
 namespace DAQMS.Service
 {
-    public class DropDownService
+    public  class DropDownService
     {
         public static DropDownService GetInstance()
         {
-            return new DropDownService();
+            return new  DropDownService();
         }
         #region Load Data
 
