@@ -58,6 +58,11 @@ namespace DAQMS.DAL
                     sql = "SELECT * FROM (SELECT id, company_name as name  FROM company) abc WHERE 0=0";
                 }
 
+                else if (TableType == "relay_state")
+                {
+                    sql = "SELECT * FROM (SELECT id, relay_state as name  FROM relay_state) abc WHERE 0=0";
+                }
+
                 if (Id > 0)
                 {
                     sql += " AND id=" + Id;

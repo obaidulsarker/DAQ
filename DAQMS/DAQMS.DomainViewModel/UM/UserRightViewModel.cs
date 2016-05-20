@@ -15,9 +15,6 @@ namespace DAQMS.DomainViewModel
         {
             this.ApplicationId = 1;
             this.ApplicationName = "DAQ Managment System";
-           
-           this.ModuleId = 1;
-           this.ModuleName = "DAQ";
         }
 
        [DataMember, DataColumn(true)]

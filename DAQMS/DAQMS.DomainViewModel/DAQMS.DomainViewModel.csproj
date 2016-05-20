@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAQ\AlertSetupViewModel.cs" />
     <Compile Include="DAQ\ContactViewModel.cs" />
     <Compile Include="DAQ\DeviceViewModel.cs" />
     <Compile Include="DAQ\DomainViewModel.cs" />
+    <Compile Include="DAQ\ProjectContactViewModel.cs" />
+    <Compile Include="DAQ\RelayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAQ\CompanyViewModel.cs" />
     <Compile Include="UM\LoginHistoryViewModel.cs" />

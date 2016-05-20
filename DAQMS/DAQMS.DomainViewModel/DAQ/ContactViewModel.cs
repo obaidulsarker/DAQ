@@ -14,7 +14,9 @@ namespace DAQMS.DomainViewModel
         {
             this.CompanyList = new List<SelectListItem>();
             this.ProjectList = new List<SelectListItem>();
-            this.ContactTypeList = new List<SelectListItem>(); 
+            this.ContactTypeList = new List<SelectListItem>();
+
+            this.ProjectContactList = new List<ProjectContactViewModel>();
         }
 
         [Display(Name = "Company Name")]
@@ -37,6 +39,7 @@ namespace DAQMS.DomainViewModel
         public IList<SelectListItem> ProjectList { get; set; }
         public IList<SelectListItem> ContactTypeList { get; set; }
 
+        public virtual IList<ProjectContactViewModel> ProjectContactList { get; set; }
     }
 }
 

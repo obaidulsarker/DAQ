@@ -44,11 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="DAQ\AlertSetupCtrService.cs" />
+    <Compile Include="DAQ\AlertSetupMasterService.cs" />
+    <Compile Include="DAQ\AlertSetupTempService.cs" />
     <Compile Include="DAQ\CompanyService.cs" />
     <Compile Include="DAQ\ContactService.cs" />
     <Compile Include="DAQ\DeviceService.cs" />
     <Compile Include="DAQ\DropDownService.cs" />
     <Compile Include="DAQ\ProjectService.cs" />
+    <Compile Include="DAQ\RelayService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UM\LoginHistoryService.cs" />
     <Compile Include="UM\MenuGroupService.cs" />
