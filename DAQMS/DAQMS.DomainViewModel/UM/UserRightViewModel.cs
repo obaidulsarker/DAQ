@@ -21,9 +21,11 @@ namespace DAQMS.DomainViewModel
        public int UserId { set; get; }
 
        public int ApplicationId { set; get; }
-
+      
+       [Display(Name = "IconClass")]
+       [MaxLength(100)]
        [DataMember, DataColumn(true)]
-       public int ModuleId { set; get; }
+       public String IconClass { get; set; }
 
        [DataMember, DataColumn(true)]
        public string ApplicationName { set; get; }
