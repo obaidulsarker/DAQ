@@ -185,7 +185,7 @@ namespace DAQMS.DAL
                     {
                         if (param.NpgsqlDbType == NpgsqlDbType.Varchar)
                         {
-                            param.Value = "''";
+                            param.Value = "";
                         }
                         if (param.NpgsqlDbType == NpgsqlDbType.Integer)
                         {
