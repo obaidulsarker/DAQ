@@ -11,14 +11,14 @@ using DAQMS.DomainViewModel;
 
 namespace DAQMS.DAL
 {
-    public class DeviceDAL : DataAccessBase<DeviceViewModel>
+    public class AlertHistoryDAL : DataAccessBase<AlertHistoryViewModel>
     {
-        public static DeviceDAL GetInstance()
+        public static AlertHistoryDAL GetInstance()
         {
-            return new DeviceDAL();
+            return new AlertHistoryDAL();
         }
 
-        public override System.Int32 Save(DeviceViewModel item, string mood)
+        public override System.Int32 Save(AlertHistoryViewModel item, string mood)
         {
             int id = 0;
 
@@ -34,32 +34,29 @@ namespace DAQMS.DAL
                 NpgsqlTransaction tran = conn.BeginTransaction();
 
                 // Define a command to call show_cities() procedure
-                NpgsqlCommand command = new NpgsqlCommand("save_devices", conn);
+                NpgsqlCommand command = new NpgsqlCommand("save_alert_history", conn);
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.Add(new NpgsqlParameter("p_id", NpgsqlDbType.Integer));
                 command.Parameters[0].Value = item.Id;
 
-                command.Parameters.Add(new NpgsqlParameter("p_project_id", NpgsqlDbType.Integer));
-                command.Parameters[1].Value = item.ProjectId;
+                command.Parameters.Add(new NpgsqlParameter("p_contact_id", NpgsqlDbType.Integer));
+                command.Parameters[1].Value = item.ContactId;
 
-                command.Parameters.Add(new NpgsqlParameter("p_strdevice_id", NpgsqlDbType.Varchar));
-                command.Parameters[2].Value = item.DeviceID;
+                command.Parameters.Add(new NpgsqlParameter("p_alert_type_id", NpgsqlDbType.Integer));
+                command.Parameters[2].Value = item.AlertTypeId;
 
-                command.Parameters.Add(new NpgsqlParameter("p_site_name", NpgsqlDbType.Varchar));
-                command.Parameters[3].Value = item.SiteName;
+                command.Parameters.Add(new NpgsqlParameter("p_alert_msg", NpgsqlDbType.Varchar));
+                command.Parameters[3].Value = item.AlertMsg;
 
-                command.Parameters.Add(new NpgsqlParameter("p_notes", NpgsqlDbType.Varchar));
-                command.Parameters[4].Value = item.Notes;
+                command.Parameters.Add(new NpgsqlParameter("p_isnew", NpgsqlDbType.Bit));
+                command.Parameters[4].Value = item.IsNew;
 
-                command.Parameters.Add(new NpgsqlParameter("p_farmware_version", NpgsqlDbType.Varchar));
-                command.Parameters[5].Value = item.FarmwareVersion;
+                command.Parameters.Add(new NpgsqlParameter("p_generate_timestamp", NpgsqlDbType.Timestamp));
+                command.Parameters[5].Value = item.GenerateTimestamp;
 
-                command.Parameters.Add(new NpgsqlParameter("p_daq_location", NpgsqlDbType.Varchar));
-                command.Parameters[6].Value = item.DaqLocation;
-
-                command.Parameters.Add(new NpgsqlParameter("p_device_status_id", NpgsqlDbType.Integer));
-                command.Parameters[7].Value = item.DeviceStatusId;               
+                command.Parameters.Add(new NpgsqlParameter("p_read_timestamp", NpgsqlDbType.Timestamp));
+                command.Parameters[6].Value = item.ReadTimestamp;            
 
                 command.Parameters.Add(new NpgsqlParameter("p_user_id", NpgsqlDbType.Varchar));
                 command.Parameters[8].Value = item.LoginUserID;
@@ -123,14 +120,14 @@ namespace DAQMS.DAL
             return id;
         }
 
-        public List<DeviceViewModel> GetObjList(int id, int companyId, int projectId, int deviceStatusId, string projectName, string deviceID,
+        public List<AlertHistoryViewModel> GetObjList(int id, int companyId, int projectId, int contactId, int alertTypeId, Boolean isNew,
             string loginUserId, int startRowIndex, int maximumRows)
         {
             DataSet dsResult = new DataSet();
             DataTable dt = new DataTable();
             NpgsqlConnection conn = null;
 
-            List<DeviceViewModel> results = null;
+            List<AlertHistoryViewModel> results = null;
 
             try
             {
@@ -141,7 +138,7 @@ namespace DAQMS.DAL
                 NpgsqlTransaction tran = conn.BeginTransaction();
             
                 // Define a command to call procedure
-                NpgsqlCommand command = new NpgsqlCommand("get_devices", conn);
+                NpgsqlCommand command = new NpgsqlCommand("get_alert_history", conn);
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.Add(new NpgsqlParameter("p_id", NpgsqlDbType.Integer));
@@ -153,14 +150,14 @@ namespace DAQMS.DAL
                 command.Parameters.Add(new NpgsqlParameter("p_project_id", NpgsqlDbType.Integer));
                 command.Parameters[2].Value = projectId;
 
-                command.Parameters.Add(new NpgsqlParameter("p_device_status_id", NpgsqlDbType.Integer));
-                command.Parameters[3].Value = deviceStatusId;
+                command.Parameters.Add(new NpgsqlParameter("p_contact_id", NpgsqlDbType.Integer));
+                command.Parameters[3].Value = contactId;
 
-                command.Parameters.Add(new NpgsqlParameter("p_project_name", NpgsqlDbType.Varchar));
-                command.Parameters[4].Value = projectName;
+                command.Parameters.Add(new NpgsqlParameter("p_alert_type_id", NpgsqlDbType.Integer));
+                command.Parameters[4].Value = alertTypeId;
 
-                command.Parameters.Add(new NpgsqlParameter("p_strdevice_id", NpgsqlDbType.Varchar));
-                command.Parameters[5].Value = deviceID;
+                command.Parameters.Add(new NpgsqlParameter("p_is_new", NpgsqlDbType.Bit));
+                command.Parameters[5].Value = isNew;
 
                 command.Parameters.Add(new NpgsqlParameter("p_user_id", NpgsqlDbType.Varchar));
                 command.Parameters[6].Value = loginUserId;
@@ -208,10 +205,10 @@ namespace DAQMS.DAL
                 }
 
                 // Fetch rows 
-                results = new List<DeviceViewModel>();
+                results = new List<AlertHistoryViewModel>();
                 foreach (DataRow dr in dsResult.Tables[0].Rows)
                 {
-                    DeviceViewModel obj = new DeviceViewModel();
+                    AlertHistoryViewModel obj = new AlertHistoryViewModel();
                     ModelMapperBase.GetInstance().MapItem(obj, dr);
                     results.Add(obj);
                 }
@@ -227,19 +224,19 @@ namespace DAQMS.DAL
             return results;
         }
 
-        public override DeviceViewModel GetObjById(int id)
+        public override AlertHistoryViewModel GetObjById(int id)
         {
-            return GetObjList(id, 0,0,0,"","","", 1, 1).FirstOrDefault();
+            return GetObjList(id, 0,0,0,0,true,"", 1, 1).FirstOrDefault();
         }
 
-        public override List<DeviceViewModel> GetObjList(DeviceViewModel item, int startRowIndex, int maxRow)
+        public override List<AlertHistoryViewModel> GetObjList(AlertHistoryViewModel item, int startRowIndex, int maxRow)
         {
-            return GetObjList(item.Id, item.CompanyId, item.ProjectId, item.DeviceStatusId,item.ProjectName,item.DeviceID, item.LoginUserID, startRowIndex, maxRow);
+            return GetObjList(item.Id, item.CompanyId, item.ProjectId, item.ContactId,item.AlertTypeId,item.IsNew, item.LoginUserID, startRowIndex, maxRow);
         }
 
-        public override DeviceViewModel GetObjList(DeviceViewModel item)
+        public override AlertHistoryViewModel GetObjList(AlertHistoryViewModel item)
         {
-            return GetObjList(item.Id, item.CompanyId, item.ProjectId, item.DeviceStatusId, item.ProjectName, item.DeviceID, item.LoginUserID, 0, 1).FirstOrDefault();
+            return GetObjList(item.Id, item.CompanyId, item.ProjectId, item.ContactId, item.AlertTypeId, item.IsNew, item.LoginUserID, 0, 1).FirstOrDefault();
         }
     }
 }

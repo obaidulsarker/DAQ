@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAQ\AlertHistoryViewModel.cs" />
     <Compile Include="DAQ\AlertSetupViewModel.cs" />
     <Compile Include="DAQ\ContactViewModel.cs" />
     <Compile Include="DAQ\DeviceViewModel.cs" />

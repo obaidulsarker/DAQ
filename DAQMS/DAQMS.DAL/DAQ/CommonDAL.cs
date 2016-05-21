@@ -92,6 +92,10 @@ namespace DAQMS.DAL
 
                 // Fetch rows 
                 results = new List<CommonViewModel>();
+
+                CommonViewModel selectObj = new CommonViewModel();
+                results.Add(selectObj);
+
                 foreach (DataRow dr in dsResult.Tables[0].Rows)
                 {
                     CommonViewModel obj = new CommonViewModel();

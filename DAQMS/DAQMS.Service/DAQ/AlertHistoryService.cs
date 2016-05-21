@@ -6,11 +6,12 @@ using DAQMS.DomainViewModel;
 
 namespace DAQMS.Service
 {
-    public class RelayService : BusinessBase<RelayViewModel>
+    public class AlertHistoryService : BusinessBase<AlertHistoryViewModel>
     {
-        public static RelayService GetInstance()
+
+        public static AlertHistoryService GetInstance()
         {
-            return new RelayService();
+            return new AlertHistoryService();
         }
 
         #region Operation
@@ -19,11 +20,11 @@ namespace DAQMS.Service
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public override int InsertData(RelayViewModel item)
+        public override int InsertData(AlertHistoryViewModel item)
         {
             try
             {
-                return RelayDAL.GetInstance().Save(item, "I");
+                return AlertHistoryDAL.GetInstance().Save(item, "I");
             }
             catch (CaughtException ce)
             {
@@ -37,11 +38,11 @@ namespace DAQMS.Service
         /// <param name="item"></param>
         /// <returns></returns>
 
-        public override int UpdateData(RelayViewModel item)
+        public override int UpdateData(AlertHistoryViewModel item)
         {
             try
             {
-                return RelayDAL.GetInstance().Save(item, "U");
+                return AlertHistoryDAL.GetInstance().Save(item, "U");
             }
             catch (CaughtException ce)
             {
@@ -60,32 +61,37 @@ namespace DAQMS.Service
         /// <returns></returns>
         public override int DeleteData(int Id)
         {
-            RelayViewModel item = new RelayViewModel();
+            AlertHistoryViewModel item = new AlertHistoryViewModel();
             item.Id = Id;
-            return RelayDAL.GetInstance().Save(item, "D");
+            return AlertHistoryDAL.GetInstance().Save(item, "D");
         }
+
         #endregion
 
         #region Load Data
 
-        public override List<RelayViewModel> GetByItem(RelayViewModel item)
+        public override List<AlertHistoryViewModel> GetByItem(AlertHistoryViewModel item)
         {
-            return RelayDAL.GetInstance().GetObjList(item, 0, 10000000);
+            return AlertHistoryDAL.GetInstance().GetObjList(item, 0, 10000000);
         }
-        public override List<RelayViewModel> GetItemByPaging(RelayViewModel item, int startRowIndex, int maxRow)
+
+        public override List<AlertHistoryViewModel> GetItemByPaging(AlertHistoryViewModel item, int startRowIndex, int maxRow)
         {
-            return RelayDAL.GetInstance().GetObjList(item, startRowIndex, maxRow);
+            return AlertHistoryDAL.GetInstance().GetObjList(item, startRowIndex, maxRow);
         }
-        public override RelayViewModel GetIById(int Id)
+
+        public override AlertHistoryViewModel GetIById(int Id)
         {
-            return RelayDAL.GetInstance().GetObjById(Id);
+            return AlertHistoryDAL.GetInstance().GetObjById(Id);
         }
-        public override List<RelayViewModel> GetAll()
+
+        public override List<AlertHistoryViewModel> GetAll()
         {
-            RelayDAL obj = new RelayDAL();
-            return obj.GetObjList(new RelayViewModel(), 0, 100000000);
+            AlertHistoryDAL obj = new AlertHistoryDAL();
+            return obj.GetObjList(new AlertHistoryViewModel(), 0, 100000000);
         }
 
         #endregion
+
     }
 }

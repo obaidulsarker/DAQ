@@ -50,6 +50,7 @@
     <Compile Include="Base\EventLogMgr.cs" />
     <Compile Include="Base\IPrimaryBase.cs" />
     <Compile Include="Base\SharedEnum.cs" />
+    <Compile Include="DAQ\AlertHistoryDAL.cs" />
     <Compile Include="DAQ\AlertSetupMasterDAL.cs" />
     <Compile Include="DAQ\AlertSetupCtrDAL.cs" />
     <Compile Include="DAQ\AlertSetupTempDAL.cs" />
