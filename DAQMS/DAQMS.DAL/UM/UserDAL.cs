@@ -187,6 +187,10 @@ namespace DAQMS.DAL
                         {
                             param.Value = "";
                         }
+                        if (param.NpgsqlDbType == NpgsqlDbType.Integer)
+                        {
+                            param.Value = 0;
+                        }
                         else if (param.NpgsqlDbType == NpgsqlDbType.Timestamp)
                         {
                             param.Value = DBNull.Value;
